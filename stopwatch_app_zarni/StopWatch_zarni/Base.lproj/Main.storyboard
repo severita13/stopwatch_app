@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatch_zarni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="stopwatch" id="C3e-eD-4UR">
+                                <rect key="frame" x="161" y="65" width="88" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-SJ-2e8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-ZY-4cC">
+                                <rect key="frame" x="121.5" y="177" width="171" height="32"/>
+                                <segments>
+                                    <segment title="Timer"/>
+                                    <segment title="Stopwatch"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchViews:" destination="BYZ-38-t0r" eventType="valueChanged" id="1se-px-ArK"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-QY-8IK">
+                                <rect key="frame" x="0.0" y="227" width="414" height="669"/>
+                                <connections>
+                                    <segue destination="4Az-cq-GYO" kind="embed" id="yNu-di-6AV"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LP-s8-0Vk">
+                                <rect key="frame" x="0.0" y="227" width="414" height="669"/>
+                                <connections>
+                                    <segue destination="XLv-KG-XPg" kind="embed" id="1Jd-r5-XX1"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6LP-s8-0Vk" secondAttribute="bottom" id="21X-ns-1kb"/>
+                            <constraint firstItem="gY3-QY-8IK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4st-vI-Z8n"/>
+                            <constraint firstItem="6LP-s8-0Vk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JwZ-Id-tFy"/>
+                            <constraint firstAttribute="bottom" secondItem="gY3-QY-8IK" secondAttribute="bottom" id="LIG-Ev-4Ai"/>
+                            <constraint firstItem="6LP-s8-0Vk" firstAttribute="top" secondItem="rZP-ZY-4cC" secondAttribute="bottom" constant="19" id="Y8I-cF-0p0"/>
+                            <constraint firstItem="rZP-ZY-4cC" firstAttribute="top" secondItem="C3e-eD-4UR" secondAttribute="bottom" constant="24" id="oRo-4d-uh1"/>
+                            <constraint firstItem="gY3-QY-8IK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="piJ-ca-51I"/>
+                            <constraint firstItem="rZP-ZY-4cC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xdm-On-xwd"/>
+                            <constraint firstItem="6LP-s8-0Vk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="y8P-0N-mVS"/>
+                            <constraint firstItem="gY3-QY-8IK" firstAttribute="top" secondItem="rZP-ZY-4cC" secondAttribute="bottom" constant="19" id="yH8-Vg-ajQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstView" destination="6LP-s8-0Vk" id="JPY-hb-sRy"/>
+                        <outlet property="icon" destination="hc7-SJ-2e8" id="MfJ-sK-crl"/>
+                        <outlet property="secondView" destination="gY3-QY-8IK" id="kxV-Ua-Dx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17.39130434782609" y="77.678571428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VaB-Ck-Lly">
+            <objects>
+                <viewController id="XLv-KG-XPg" customClass="ViewController" customModule="StopWatch_zarni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ieS-7v-UHm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hy-Ul-LMv">
+                                <rect key="frame" x="85.5" y="17" width="243" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAk-iI-T0n">
+                                <rect key="frame" x="-3" y="96" width="420" height="553"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B97-ox-DYV">
+                                        <rect key="frame" x="145" y="252" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVe-A9-1in">
+                                                <rect key="frame" x="20" y="20" width="84" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="pause_black" backgroundImage="pause_black">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseTap:" destination="XLv-KG-XPg" eventType="touchUpInside" id="no5-RM-VjH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-pK-WNI">
+                                        <rect key="frame" x="277" y="252" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS8-Ki-KEg">
+                                                <rect key="frame" x="20" y="20" width="84" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="play" image="play">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playTap:" destination="XLv-KG-XPg" eventType="touchUpInside" id="NR8-6U-d3c"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6j-hl-OD3">
+                                        <rect key="frame" x="20" y="252" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRy-Nc-yan">
+                                                <rect key="frame" x="20" y="20" width="84" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="stop" image="stop_black">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stopTap:" destination="XLv-KG-XPg" eventType="touchUpInside" id="fWV-KB-YRC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="92b-GJ-iKo"/>
+                        <constraints>
+                            <constraint firstItem="3Hy-Ul-LMv" firstAttribute="centerX" secondItem="ieS-7v-UHm" secondAttribute="centerX" id="BQI-58-h4e"/>
+                            <constraint firstItem="92b-GJ-iKo" firstAttribute="bottom" secondItem="xAk-iI-T0n" secondAttribute="bottom" constant="20" id="TMX-7z-NRA"/>
+                            <constraint firstItem="xAk-iI-T0n" firstAttribute="centerX" secondItem="3Hy-Ul-LMv" secondAttribute="centerX" id="htQ-Md-ggS"/>
+                            <constraint firstItem="xAk-iI-T0n" firstAttribute="top" secondItem="ieS-7v-UHm" secondAttribute="top" constant="96" id="jaL-nM-tL7"/>
+                            <constraint firstItem="xAk-iI-T0n" firstAttribute="leading" secondItem="ieS-7v-UHm" secondAttribute="leadingMargin" constant="-23" id="oIe-er-fag"/>
+                            <constraint firstItem="xAk-iI-T0n" firstAttribute="top" secondItem="3Hy-Ul-LMv" secondAttribute="bottom" constant="8.5" id="rq5-jM-mgW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="hVe-A9-1in" id="Jsb-WX-OvO"/>
+                        <outlet property="playButton" destination="FS8-Ki-KEg" id="KTU-1n-oQh"/>
+                        <outlet property="resetButton" destination="JRy-Nc-yan" id="sPh-R7-DWo"/>
+                        <outlet property="timerLabel" destination="3Hy-Ul-LMv" id="Fqf-sE-luQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQC-D1-wUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407.24637681159425" y="657.92410714285711"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="ppd-Cm-xvp">
+            <objects>
+                <viewController id="4Az-cq-GYO" customClass="ViewController2" customModule="StopWatch_zarni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UmA-tq-hza">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LmY-yJ-E8j">
+                                <rect key="frame" x="-3" y="96" width="414" height="553"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-Jp-Gec">
+                                        <rect key="frame" x="145" y="252" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kI5-My-wax">
+                                                <rect key="frame" x="20" y="20" width="84" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="pause_black" backgroundImage="pause_black">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseTap:" destination="4Az-cq-GYO" eventType="touchUpInside" id="V80-Ek-kR4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZv-Gd-ajg">
+                                        <rect key="frame" x="277" y="252" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-RG-TLW">
+                                                <rect key="frame" x="20" y="20" width="84" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="play" image="play">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playTap:" destination="4Az-cq-GYO" eventType="touchUpInside" id="iNh-2F-L41"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tp-Uh-zoi">
+                                        <rect key="frame" x="20" y="252" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeD-5T-DNu">
+                                                <rect key="frame" x="20" y="20" width="84" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="stop" image="stop_black">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stopTap:" destination="4Az-cq-GYO" eventType="touchUpInside" id="Vzq-0o-qB3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvU-hD-st0">
+                                <rect key="frame" x="85.5" y="17" width="243" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cYc-AD-hiJ"/>
+                        <constraints>
+                            <constraint firstItem="AvU-hD-st0" firstAttribute="top" secondItem="UmA-tq-hza" secondAttribute="top" constant="17" id="BXQ-be-GWa"/>
+                            <constraint firstItem="AvU-hD-st0" firstAttribute="centerX" secondItem="UmA-tq-hza" secondAttribute="centerX" id="yAL-ne-TYi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="kI5-My-wax" id="15m-e2-xL6"/>
+                        <outlet property="playButton" destination="ZgR-RG-TLW" id="syz-Sg-Le5"/>
+                        <outlet property="resetButton" destination="ZeD-5T-DNu" id="ODd-nr-5Dn"/>
+                        <outlet property="timerLabel" destination="AvU-hD-st0" id="Lna-gd-xKl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUY-FJ-lhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="658"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause_black" width="128" height="134"/>
+        <image name="play" width="128" height="134"/>
+        <image name="stop_black" width="128" height="134"/>
+        <image name="stopwatch" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
